@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mocktest-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mocktest
+  template:
+    metadata:
+      labels:
+        app: mocktest
+    spec:
+      containers:
+      - name: mocktest
+        image: vaibhavawasthi/mocktest-app
+        ports:
+        - containerPort: 80
